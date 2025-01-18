@@ -37,6 +37,7 @@ for (const folder of commandFolders) {
 
 client.on('ready', () => {
  console.log(`Logged in as ${client.user.tag}!`);
+ console.log('Successfully finished startup')
 });
 
 client.on(Events.InteractionCreate, async interaction => {
