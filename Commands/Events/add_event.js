@@ -43,22 +43,6 @@ module.exports = {
 
         //const title_img = new AttachmentBuilder(`././imgs/${title}.png`);
 
-        //console.log(title_img)
-        pool = mariadb.createPool({ host: process.env.DB_HOST, port: process.env.DB_PORT, user: process.env.DB_USER, password: process.env.DB_PASS, database: process.env.DB_NAME, connectionLimit: 5 });
-        let conn;
-        try {
-            conn = await pool.getConnection();
-            const rows = await conn.query("SELECT 1 as val");
-            console.log(rows); //[ {val: 1}, meta: ... ]
-            //const res = await conn.query("INSERT INTO myTable value (?, ?)", [1, "mariadb"]);
-            //console.log(res); // { affectedRows: 1, insertId: 1, warningStatus: 0 }
-          
-        } catch (err) {
-            throw err;
-        } finally {
-            if (conn) conn.end();
-        }
-
 
         eventEmbed = new EmbedBuilder()
         .setColor(0x0099FF)
